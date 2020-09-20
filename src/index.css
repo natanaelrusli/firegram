@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&display=swap');
+
+:root{
+  --primary: #efb6b2;
+  --secondary: #4e4e4e;
+  --error: #ff4a4a;
+}
+
+/* base styles & title */
+body{
+  font-family: "Noto Serif";
+  color: var(--secondary);
+}
+.center{
+  display: flex;
+  justify-content: center;
+}
+
+.App{
+  max-width: 960px;
+  margin: 0 auto;
+}
+.title h1{
+  color: var(--primary);
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+  font-weight: normal;
+}
+.title h2, .title p{
+  text-align: center;
+}
+.title h2{
+  margin-top: 60px;
+  font-size: 2.6rem;
+}
+.output{
+  height: 60px;
+  font-size: 0.8rem;
+}
+.error{
+  color: var(--error);
+}
+
+/* upload form styles */ 
+.inputfile {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+  z-index: -1;
+  text-decoration: none;
+}
+
+.inputfile + label {
+  padding: 10px;
+  border-radius: 50%;
+  width: 50px;
+  font-size: 32px;
+  font-weight: 700;
+  color:var(--primary);
+  border: solid 1px #efb6b2;
+  text-align: center;
+  transition: 0.1s ease-in;
+}
+
+.inputfile:focus + label,
+.inputfile + label:hover {
+  background-color:var(--primary);
+  color: #FFF;
+  transition: 0.1s ease-in;
+}
+
+.inputfile + label {
+	cursor: pointer; /* "hand" cursor */
+}
+
+.inputfile:focus + label {
+	outline: 1px dotted #000;
+	outline: -webkit-focus-ring-color auto 5px;
+}
+
+.inputfile + label * {
+	pointer-events: none;
+}
+
+
+/* progress bar styles */
+.progress-bar{
+  height: 15px;
+  border-radius: 5px;
+  background: var(--primary);
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+/* image grid styles */
+.img-grid{
+  margin: 20px auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 40px;
+}
+
+.img-wrap{
+  overflow: hidden;
+  height: 0;
+  padding: 50% 0;
+  position: relative;
+  opacity: 0.8;
+}
+
+.img-wrap img{
+  min-width: 100%;
+  min-height: 100%;
+  max-width: 150%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* modal styles */
+.backdrop{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,.5);
+}
+
+.backdrop img{
+  display: block;
+  max-width: 60%;
+  max-height: 80%;
+  margin: 60px auto;
+  box-shadow: 3px 5px 7px rgba(0, 0, 0, 0.5);
+  border: 3px solid #FFF;
+}
